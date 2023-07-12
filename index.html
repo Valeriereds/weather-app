@@ -9,24 +9,61 @@
   <title>Let's Weather this together!</title>
 </head>
 
-<body>
+<body class="flex-column min-100-vh">
   <header class="container-fluid bg-dark text-light mb-5 p-3">
-   <div class="d-flex align-items-center justify-content-center">
+   <div class="d-flex justify-content-center">
     <h1>Weather Forecast</h1>
    </div>
   </header>
   
-  <section class="container my-5">
-    <div class="row">
-      <div class="col-12 col-md-8 col-lg-9">
-        <h2>Search Me</h2>
+  <main class="row justify-space-between">
+    <div class="col-4 col-md-4">
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By User</h3>
+        <form id="user-form" class="card-body">
+          <label class="form-label" for="username">Username</label>
+          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn">Get User</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By Topic</h3>
+        <div id="language-buttons" class="card-body">
+          <button data-language="javascript" class="btn">JavaScript</button>
+          <button data-language="html" class="btn">HTML</button>
+          <button data-language="css" class="btn">CSS</button>
+        </div>
       </div>
     </div>
-  </section>
-  
-  <section class="container my-5">
+
+    <div class="col-8">
+      
+    </div>
+    <!-- <section class="col-12 col-md-4">
+        <div class="card">
+          <h3 class="card-header text-uppercase">Search By User</h3>
+          <form id="user-form" class="card-body">
+            <label class="form-label" for="username">Username</label>
+            <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+            <button type="submit" class="btn">Get User</button>
+          </form>
+        </div>
+      
     
-  </section>
+      <div class="card">
+        <h3 class="card-header text-uppercase">Look at your history</h3>
+        <div id="language-buttons" class="card-body">
+        </div>
+      </div>
+    </section>
+    
+    <section class="justify-">
+      <div class="card">
+        <h4 class="card-header text-uppercase">Searched City</h4>
+      </div>
+    </section> -->
+</main>
   
   <!-- 2-3 rows are needed. one for the current day forecast, one for a 5day header and one for the 5 day weather -->
   <!-- 5 cards for 5 day weather -->
