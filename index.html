@@ -18,29 +18,23 @@
   
   <main class="row justify-space-between">
     <section class="col-12 col-md-4">
-      <div class="card">
-        <h3 class="card-header text-uppercase">Search By User</h3>
-        <form id="user-form" class="card-body">
-          <label class="form-label" for="username">Username</label>
-          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn">Get User</button>
-        </form>
+      <div id="input-group">
+        <input id="user-input" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+        <button type="button" class="btn btn-outline-primary" id="search-button">search</button>
       </div>
 
-      <div class="card">
-        <h3 class="card-header text-uppercase">Search By Topic</h3>
-        <div id="language-buttons" class="card-body">
-          <button data-language="javascript" class="btn">JavaScript</button>
-          <button data-language="html" class="btn">HTML</button>
-          <button data-language="css" class="btn">CSS</button>
-        </div>
+      <div class="col-12 col-md-9 p-3 text-strong">
+        <h2>Showing results for <span id="result-text"></span></h2>
+        <div id="result-content"></div>
       </div>
     </section>
     
     <section class="col-12 col-md-8"> 
       <div class="card">
         <div class="card-body">
-          This is some text within a card body.
+          <h4>Today's Forecast</h4>
+          <h6 id="today"></h6>
+          <ul></ul>
         </div>
       </div>
 
@@ -50,76 +44,42 @@
 
     <section class="row">
       <div class="card text-white bg-primary col-12 col-md-6 col-lg-2 my-2 mx-1" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
         <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title"></h5>
+          <ul class="card-text"></ul>
         </div>
       </div>
       
       <div class="card text-white bg-primary col-12 col-md-6 col-lg-2 my-2 mx-1" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
         <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title"></h5>
+          <ul class="card-text"></ul>
         </div>
       </div>
     
       <div class="card text-white bg-primary col-12 col-md-6 col-lg-2 my-2 mx-1" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
         <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title"></h5>
+          <ul class="card-text"></ul>
         </div>
       </div>
     
       <div class="card text-white bg-primary col-12 col-md-6 col-lg-2 my-2 mx-1" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
         <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title"></h5>
+          <ul class="card-text"></ul>
         </div>
       </div>
     
       <div class="card text-white bg-primary col-12 col-md-6 col-lg-2 my-2 mx-1" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
         <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title"></h5>
+          <ul class="card-text"></ul>
         </div>
       </div>
     </section>
-      
-
     </section>
-      
-    <!-- <div class="col-8">
-      
-    </div> -->
-    <!-- <section class="col-12 col-md-4">
-        <div class="card">
-          <h3 class="card-header text-uppercase">Search By User</h3>
-          <form id="user-form" class="card-body">
-            <label class="form-label" for="username">Username</label>
-            <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-            <button type="submit" class="btn">Get User</button>
-          </form>
-        </div>
-      
-    
-      <div class="card">
-        <h3 class="card-header text-uppercase">Look at your history</h3>
-        <div id="language-buttons" class="card-body">
-        </div>
-      </div>
-    </section>
-    
-    <section class="justify-">
-      <div class="card">
-        <h4 class="card-header text-uppercase">Searched City</h4>
-      </div>
-    </section> -->
-</main>
+  </main>
   
   <!-- 2-3 rows are needed. one for the current day forecast, one for a 5day header and one for the 5 day weather -->
   <!-- 5 cards for 5 day weather -->
