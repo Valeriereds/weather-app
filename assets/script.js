@@ -1,8 +1,4 @@
-// variables for api key and url
-// var for city to collect the user search input
-// use a for city variable and appid  for the api key to look up 
-// we'll need 2 urls: one for the 5day forecast {lat/long}
-// 2nd url will be needed for the city info to input for the city data
+// variables for API keys, and additional content
 var keyMe = "373d8c572f14892cf8f19bb961710ac8"
 var letsLinkCity = "https://api.openweathermap.org/data/2.5/forecast?q={cityname}&appid=373d8c572f14892cf8f19bb961710ac8&units=imperial"
 var searchMe = document.getElementById("search-button");
@@ -22,13 +18,12 @@ var diaCuat = document.getElementById("cuatrodia")
 var diaCin = document.getElementById("cincodia")
 
 
-
 // search button
 searchMe.addEventListener("click", wheresCarmen);
 searchMe.addEventListener("click", wheresWaldo);
 var uUsedMe = [];
 
-// function to for user's searched city
+// function for user's searched city
 function wheresWaldo(event) {
   event.preventDefault();
   var giveMe = userInMe.value
@@ -36,15 +31,9 @@ function wheresWaldo(event) {
     return response.json()
   }).then(function(data) {
     uUsedMe.push(giveMe);
-    console.log(uUsedMe);
-    // pushing whatever the user input is giving into the array
     localStorage.setItem("result-text", JSON.stringify(uUsedMe));
-    console.log("fetch response--------------");
-    console.log(data);
     var lats = (data.city.coord.lat);
     var getaLon = (data.city.coord.lon);
-    console.log(lats);
-    console.log(getaLon);
     wheresCarmen(lats, getaLon);
     hisStory();
   }
@@ -55,14 +44,18 @@ function wheresWaldo(event) {
 function hisStory() {
   var saveMe = JSON.parse(localStorage.getItem("result-text"));
   hitList.innerHTML = " ";
+  billWeathers.innerHTML = " ";
+  billWeathers1.innerHTML = " ";
+  billWeathers2.innerHTML = " ";
+  billWeathers3.innerHTML = " ";
+  billWeathers4.innerHTML = " ";
+  billWeathers5.innerHTML = " ";
   if (saveMe !== null) {
     uUsedMe = saveMe;
     for (i=0; i < saveMe.length; i++){
       var cityButt = saveMe[i];
-      console.log(cityButt)
       var listMe = document.createElement("button");
       listMe.textContent = cityButt;
-      // listMe.setAttribute("result-content", i);
       hitList.appendChild(listMe);
     } 
   }
@@ -87,9 +80,7 @@ function wheresCarmen(lats, getaLon) {
     var blowMe = data.list[0].wind.speed;
     var iconIck = data.list[0].weather[0].icon;
 
-
     itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, watDayIsIt, iconIck)
-
 
     var watDayIsIt1 = dayjs(data.list[5].dt_txt).format("M/D/YYYY")
     var uFeelMe1 = data.list[5].main.feels_like;
@@ -100,7 +91,6 @@ function wheresCarmen(lats, getaLon) {
     var iconIck1 = data.list[5].weather[0].icon;
 
     itsGonnaBe1(uFeelMe1, oDaHumidity1, thatsHot1, digaMe1, blowMe1, watDayIsIt1, iconIck1) 
-
 
     var watDayIsIt2 = dayjs(data.list[12].dt_txt).format("M/D/YYYY")
     var uFeelMe2 = data.list[12].main.feels_like;
@@ -146,11 +136,9 @@ function wheresCarmen(lats, getaLon) {
   
 }
 
+// function to render data to main container
 function itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, watDayIsIt, iconData) {
-  
-// clear parent container billweathers.clear()
 
-    var dateMe = document.querySelector("#today")
     var feelMe = document.createElement("li")
     var humidMe = document.createElement("li")
     var scribeMe = document.createElement("li");
@@ -166,19 +154,18 @@ function itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, watDayIsIt, 
     windMe.textContent = "Wind Speed: " + Math.round(blowMe) + " M.P.H."
     merylStreep.setAttribute("src", `https://openweathermap.org/img/w/${iconData}.png`)
 
-
     billWeathers.appendChild(feelMe)
     billWeathers.appendChild(humidMe)
     billWeathers.appendChild(scribeMe)
     billWeathers.appendChild(temptMe)
     billWeathers.appendChild(windMe)
     billWeathers.appendChild(merylStreep)
+
 }
 
+// functions to render data to the 5 day forecast cards, 1-5
 function itsGonnaBe1(uFeelMe1, oDaHumidity1, thatsHot1, digaMe1, blowMe1, watDayIsIt1, iconData) {
 
-
-    var dateMe1 = document.querySelector("#today")
     var feelMe1 = document.createElement("li")
     var humidMe1 = document.createElement("li")
     var scribeMe1 = document.createElement("li");
@@ -204,8 +191,6 @@ function itsGonnaBe1(uFeelMe1, oDaHumidity1, thatsHot1, digaMe1, blowMe1, watDay
 
 function itsGonnaBe2(uFeelMe2, oDaHumidity2, thatsHot2, digaMe2, blowMe2, watDayIsIt2, iconData) {
 
-
-    var dateMe2 = document.querySelector("#today")
     var feelMe2 = document.createElement("li")
     var humidMe2 = document.createElement("li")
     var scribeMe2 = document.createElement("li");
@@ -231,7 +216,6 @@ function itsGonnaBe2(uFeelMe2, oDaHumidity2, thatsHot2, digaMe2, blowMe2, watDay
 
 function itsGonnaBe3(uFeelMe3, oDaHumidity3, thatsHot3, digaMe3, blowMe3, watDayIsIt3, iconData) {
 
-    var dateMe = document.querySelector("#today")
     var feelMe3 = document.createElement("li")
     var humidMe3 = document.createElement("li")
     var scribeMe3 = document.createElement("li");
@@ -257,8 +241,6 @@ function itsGonnaBe3(uFeelMe3, oDaHumidity3, thatsHot3, digaMe3, blowMe3, watDay
 
 function itsGonnaBe4(uFeelMe4, oDaHumidity4, thatsHot4, digaMe4, blowMe4, watDayIsIt4, iconData) {
 
-
-    var dateMe = document.querySelector("#today")
     var feelMe4 = document.createElement("li")
     var humidMe4 = document.createElement("li")
     var scribeMe4 = document.createElement("li");
@@ -284,8 +266,6 @@ function itsGonnaBe4(uFeelMe4, oDaHumidity4, thatsHot4, digaMe4, blowMe4, watDay
 
 function itsGonnaBe5(uFeelMe5, oDaHumidity5, thatsHot5, digaMe5, blowMe5, watDayIsIt5, iconData) {
 
-
-    var dateMe = document.querySelector("#today")
     var feelMe5 = document.createElement("li")
     var humidMe5 = document.createElement("li")
     var scribeMe5 = document.createElement("li");
@@ -307,8 +287,6 @@ function itsGonnaBe5(uFeelMe5, oDaHumidity5, thatsHot5, digaMe5, blowMe5, watDay
     billWeathers5.appendChild(temptMe5)
     billWeathers5.appendChild(windMe5)
     billWeathers5.appendChild(merylStreep5)
-
-
     
   }
 
