@@ -79,76 +79,84 @@ function wheresCarmen(lats, getaLon) {
   .then(function (data) {
     console.log(data)
 
-    var watDayIsIt = data.list[0].dt_txt
+    var watDayIsIt = dayjs(data.list[0].dt_txt).format("M/D/YYYY")
     var uFeelMe = data.list[0].main.feels_like;
     var oDaHumidity = data.list[0].main.humidity;
     var digaMe = data.list[0].weather[0].description;
     var thatsHot = data.list[0].main.temp;
     var blowMe = data.list[0].wind.speed;
-  
+    var iconIck = data.list[0].weather[0].icon;
 
 
-    itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, watDayIsIt)
+    itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, watDayIsIt, iconIck)
 
 
-    var watDayIsIt1 = data.list[1].dt_txt
-    var uFeelMe1 = data.list[1].main.feels_like;
-    var oDaHumidity1 = data.list[1].main.humidity;
-    var digaMe1 = data.list[1].weather[0].description;
-    var thatsHot1 = data.list[1].main.temp;
-    var blowMe1 = data.list[1].wind.speed;
-    
-    itsGonnaBe1(uFeelMe1, oDaHumidity1, thatsHot1, digaMe1, blowMe1, watDayIsIt1) 
+    var watDayIsIt1 = dayjs(data.list[5].dt_txt).format("M/D/YYYY")
+    var uFeelMe1 = data.list[5].main.feels_like;
+    var oDaHumidity1 = data.list[5].main.humidity;
+    var digaMe1 = data.list[5].weather[0].description;
+    var thatsHot1 = data.list[5].main.temp;
+    var blowMe1 = data.list[5].wind.speed;
+    var iconIck1 = data.list[5].weather[0].icon;
+
+    itsGonnaBe1(uFeelMe1, oDaHumidity1, thatsHot1, digaMe1, blowMe1, watDayIsIt1, iconIck1) 
 
 
-    var watDayIsIt2 = data.list[9].dt_txt
-    var uFeelMe2 = data.list[9].main.feels_like;
-    var oDaHumidity2 = data.list[9].main.humidity;
-    var digaMe2 = data.list[9].weather[0].description;
-    var thatsHot2 = data.list[9].main.temp;
-    var blowMe2 = data.list[9].wind.speed;
-    
-    itsGonnaBe2(uFeelMe2, oDaHumidity2, thatsHot2, digaMe2, blowMe2, watDayIsIt2)
+    var watDayIsIt2 = dayjs(data.list[12].dt_txt).format("M/D/YYYY")
+    var uFeelMe2 = data.list[12].main.feels_like;
+    var oDaHumidity2 = data.list[12].main.humidity;
+    var digaMe2 = data.list[12].weather[0].description;
+    var thatsHot2 = data.list[12].main.temp;
+    var blowMe2 = data.list[12].wind.speed;
+    var iconIck2 = data.list[12].weather[0].icon;
 
-    var watDayIsIt3 = data.list[17].dt_txt
-    var uFeelMe3 = data.list[17].main.feels_like;
-    var oDaHumidity3 = data.list[17].main.humidity;
-    var digaMe3 = data.list[17].weather[0].description;
-    var thatsHot3 = data.list[17].main.temp;
-    var blowMe3 = data.list[17].wind.speed;
-    
-    itsGonnaBe3(uFeelMe3, oDaHumidity3, thatsHot3, digaMe3, blowMe3, watDayIsIt3)
+    itsGonnaBe2(uFeelMe2, oDaHumidity2, thatsHot2, digaMe2, blowMe2, watDayIsIt2, iconIck2)
 
-    var watDayIsIt4 = data.list[25].dt_txt
-    var uFeelMe4 = data.list[25].main.feels_like;
-    var oDaHumidity4 = data.list[25].main.humidity;
-    var digaMe4 = data.list[25].weather[0].description;
-    var thatsHot4 = data.list[25].main.temp;
-    var blowMe4 = data.list[25].wind.speed;
-    
-    itsGonnaBe4(uFeelMe4, oDaHumidity4, thatsHot4, digaMe4, blowMe4, watDayIsIt4)
+    var watDayIsIt3 = dayjs(data.list[22].dt_txt).format("M/D/YYYY")
+    var uFeelMe3 = data.list[22].main.feels_like;
+    var oDaHumidity3 = data.list[22].main.humidity;
+    var digaMe3 = data.list[22].weather[0].description;
+    var thatsHot3 = data.list[22].main.temp;
+    var blowMe3 = data.list[22].wind.speed;
+    var iconIck3 = data.list[22].weather[0].icon;
 
-    var watDayIsIt5 = data.list[33].dt_txt
-    var uFeelMe5 = data.list[33].main.feels_like;
-    var oDaHumidity5 = data.list[33].main.humidity;
-    var digaMe5 = data.list[33].weather[0].description;
-    var thatsHot5 = data.list[33].main.temp;
-    var blowMe5 = data.list[33].wind.speed;
-    
-    itsGonnaBe5(uFeelMe5, oDaHumidity5, thatsHot5, digaMe5, blowMe5, watDayIsIt5)
+    itsGonnaBe3(uFeelMe3, oDaHumidity3, thatsHot3, digaMe3, blowMe3, watDayIsIt3, iconIck3)
+
+    var watDayIsIt4 = dayjs(data.list[30].dt_txt).format("M/D/YYYY")
+    var uFeelMe4 = data.list[30].main.feels_like;
+    var oDaHumidity4 = data.list[30].main.humidity;
+    var digaMe4 = data.list[30].weather[0].description;
+    var thatsHot4 = data.list[30].main.temp;
+    var blowMe4 = data.list[30].wind.speed;
+    var iconIck4 = data.list[30].weather[0].icon;
+
+    itsGonnaBe4(uFeelMe4, oDaHumidity4, thatsHot4, digaMe4, blowMe4, watDayIsIt4, iconIck4)
+
+    var watDayIsIt5 = dayjs(data.list[38].dt_txt).format("M/D/YYYY")
+    var uFeelMe5 = data.list[38].main.feels_like;
+    var oDaHumidity5 = data.list[38].main.humidity;
+    var digaMe5 = data.list[38].weather[0].description;
+    var thatsHot5 = data.list[38].main.temp;
+    var blowMe5 = data.list[38].wind.speed;
+    var iconIck5 = data.list[38].weather[0].icon;
+
+    itsGonnaBe5(uFeelMe5, oDaHumidity5, thatsHot5, digaMe5, blowMe5, watDayIsIt5, iconIck5)
 
   });
   
 }
 
-function itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, watDayIsIt) {
+function itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, watDayIsIt, iconData) {
   
+// clear parent container billweathers.clear()
+
     var dateMe = document.querySelector("#today")
     var feelMe = document.createElement("li")
     var humidMe = document.createElement("li")
     var scribeMe = document.createElement("li");
     var temptMe = document.createElement("li")
     var windMe = document.createElement("li");
+    var merylStreep = document.createElement("img")
     
     aLovelyDay.textContent = "Forecast For " + watDayIsIt
     feelMe.textContent = "Feels Like: " + Math.round(uFeelMe) + '\u00b0' + "F"
@@ -156,15 +164,18 @@ function itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, watDayIsIt) 
     scribeMe.textContent = digaMe
     temptMe.textContent = "Temperature: " + Math.round(thatsHot) + '\u00B0' +"F"
     windMe.textContent = "Wind Speed: " + Math.round(blowMe) + " M.P.H."
-    
+    merylStreep.setAttribute("src", `https://openweathermap.org/img/w/${iconData}.png`)
+
+
     billWeathers.appendChild(feelMe)
     billWeathers.appendChild(humidMe)
     billWeathers.appendChild(scribeMe)
     billWeathers.appendChild(temptMe)
     billWeathers.appendChild(windMe)
+    billWeathers.appendChild(merylStreep)
 }
 
-function itsGonnaBe1(uFeelMe1, oDaHumidity1, thatsHot1, digaMe1, blowMe1, watDayIsIt1) {
+function itsGonnaBe1(uFeelMe1, oDaHumidity1, thatsHot1, digaMe1, blowMe1, watDayIsIt1, iconData) {
 
 
     var dateMe1 = document.querySelector("#today")
@@ -173,6 +184,7 @@ function itsGonnaBe1(uFeelMe1, oDaHumidity1, thatsHot1, digaMe1, blowMe1, watDay
     var scribeMe1 = document.createElement("li");
     var temptMe1 = document.createElement("li")
     var windMe1 = document.createElement("li");
+    var merylStreep1 = document.createElement("img");
     
     diaUno.textContent = "Forecast For " + watDayIsIt1
     feelMe1.textContent = "Feels Like: " + Math.round(uFeelMe1) + '\u00b0' + "F"
@@ -180,15 +192,17 @@ function itsGonnaBe1(uFeelMe1, oDaHumidity1, thatsHot1, digaMe1, blowMe1, watDay
     scribeMe1.textContent = digaMe1
     temptMe1.textContent = "Temperature: " + Math.round(thatsHot1) + '\u00B0' +"F"
     windMe1.textContent = "Wind Speed: " + Math.round(blowMe1) + " M.P.H."
+    merylStreep1.setAttribute("src", `https://openweathermap.org/img/w/${iconData}.png`)
     
     billWeathers1.appendChild(feelMe1)
     billWeathers1.appendChild(humidMe1)
     billWeathers1.appendChild(scribeMe1)
     billWeathers1.appendChild(temptMe1)
     billWeathers1.appendChild(windMe1)
+    billWeathers1.appendChild(merylStreep1)
 }
 
-function itsGonnaBe2(uFeelMe2, oDaHumidity2, thatsHot2, digaMe2, blowMe2, watDayIsIt2) {
+function itsGonnaBe2(uFeelMe2, oDaHumidity2, thatsHot2, digaMe2, blowMe2, watDayIsIt2, iconData) {
 
 
     var dateMe2 = document.querySelector("#today")
@@ -197,6 +211,7 @@ function itsGonnaBe2(uFeelMe2, oDaHumidity2, thatsHot2, digaMe2, blowMe2, watDay
     var scribeMe2 = document.createElement("li");
     var temptMe2 = document.createElement("li")
     var windMe2 = document.createElement("li");
+    var merylStreep2 = document.createElement("img")
     
     diaDos.textContent = "Forecast For " + watDayIsIt2
     feelMe2.textContent = "Feels Like: " + Math.round(uFeelMe2) + '\u00b0' + "F"
@@ -204,15 +219,17 @@ function itsGonnaBe2(uFeelMe2, oDaHumidity2, thatsHot2, digaMe2, blowMe2, watDay
     scribeMe2.textContent = digaMe2
     temptMe2.textContent = "Temperature: " + Math.round(thatsHot2) + '\u00B0' +"F"
     windMe2.textContent = "Wind Speed: " + Math.round(blowMe2) + " M.P.H."
-    
+    merylStreep2.setAttribute("src", `https://openweathermap.org/img/w/${iconData}.png`)
+
     billWeathers2.appendChild(feelMe2)
     billWeathers2.appendChild(humidMe2)
     billWeathers2.appendChild(scribeMe2)
     billWeathers2.appendChild(temptMe2)
     billWeathers2.appendChild(windMe2)
+    billWeathers2.appendChild(merylStreep2)
 }
 
-function itsGonnaBe3(uFeelMe3, oDaHumidity3, thatsHot3, digaMe3, blowMe3, watDayIsIt3) {
+function itsGonnaBe3(uFeelMe3, oDaHumidity3, thatsHot3, digaMe3, blowMe3, watDayIsIt3, iconData) {
 
     var dateMe = document.querySelector("#today")
     var feelMe3 = document.createElement("li")
@@ -220,6 +237,7 @@ function itsGonnaBe3(uFeelMe3, oDaHumidity3, thatsHot3, digaMe3, blowMe3, watDay
     var scribeMe3 = document.createElement("li");
     var temptMe3 = document.createElement("li")
     var windMe3 = document.createElement("li");
+    var merylStreep3 = document.createElement("img")
     
     diaTres.textContent = "Forecast For " + watDayIsIt3
     feelMe3.textContent = "Feels Like: " + Math.round(uFeelMe3) + '\u00b0' + "F"
@@ -227,15 +245,17 @@ function itsGonnaBe3(uFeelMe3, oDaHumidity3, thatsHot3, digaMe3, blowMe3, watDay
     scribeMe3.textContent = digaMe3
     temptMe3.textContent = "Temperature: " + Math.round(thatsHot3) + '\u00B0' +"F"
     windMe3.textContent = "Wind Speed: " + Math.round(blowMe3) + " M.P.H."
-    
+    merylStreep3.setAttribute("src", `https://openweathermap.org/img/w/${iconData}.png`)
+
     billWeathers3.appendChild(feelMe3)
     billWeathers3.appendChild(humidMe3)
     billWeathers3.appendChild(scribeMe3)
     billWeathers3.appendChild(temptMe3)
     billWeathers3.appendChild(windMe3)
+    billWeathers3.appendChild(merylStreep3)
 }
 
-function itsGonnaBe4(uFeelMe4, oDaHumidity4, thatsHot4, digaMe4, blowMe4, watDayIsIt4) {
+function itsGonnaBe4(uFeelMe4, oDaHumidity4, thatsHot4, digaMe4, blowMe4, watDayIsIt4, iconData) {
 
 
     var dateMe = document.querySelector("#today")
@@ -244,6 +264,7 @@ function itsGonnaBe4(uFeelMe4, oDaHumidity4, thatsHot4, digaMe4, blowMe4, watDay
     var scribeMe4 = document.createElement("li");
     var temptMe4 = document.createElement("li")
     var windMe4 = document.createElement("li");
+    var merylStreep4 = document.createElement("img")
     
     diaCuat.textContent = "Forecast For " + watDayIsIt4
     feelMe4.textContent = "Feels Like: " + Math.round(uFeelMe4) + '\u00b0' + "F"
@@ -251,15 +272,17 @@ function itsGonnaBe4(uFeelMe4, oDaHumidity4, thatsHot4, digaMe4, blowMe4, watDay
     scribeMe4.textContent = digaMe4
     temptMe4.textContent = "Temperature: " + Math.round(thatsHot4) + '\u00B0' +"F"
     windMe4.textContent = "Wind Speed: " + Math.round(blowMe4) + " M.P.H."
-    
+    merylStreep4.setAttribute("src", `https://openweathermap.org/img/w/${iconData}.png`)
+
     billWeathers4.appendChild(feelMe4)
     billWeathers4.appendChild(humidMe4)
     billWeathers4.appendChild(scribeMe4)
     billWeathers4.appendChild(temptMe4)
     billWeathers4.appendChild(windMe4)
+    billWeathers4.appendChild(merylStreep4)
 }
 
-function itsGonnaBe5(uFeelMe5, oDaHumidity5, thatsHot5, digaMe5, blowMe5, watDayIsIt5) {
+function itsGonnaBe5(uFeelMe5, oDaHumidity5, thatsHot5, digaMe5, blowMe5, watDayIsIt5, iconData) {
 
 
     var dateMe = document.querySelector("#today")
@@ -268,6 +291,7 @@ function itsGonnaBe5(uFeelMe5, oDaHumidity5, thatsHot5, digaMe5, blowMe5, watDay
     var scribeMe5 = document.createElement("li");
     var temptMe5 = document.createElement("li")
     var windMe5 = document.createElement("li");
+    var merylStreep5 = document.createElement("img")
     
     diaCin.textContent = "Forecast For " + watDayIsIt5
     feelMe5.textContent = "Feels Like: " + Math.round(uFeelMe5) + '\u00b0' + "F"
@@ -275,12 +299,14 @@ function itsGonnaBe5(uFeelMe5, oDaHumidity5, thatsHot5, digaMe5, blowMe5, watDay
     scribeMe5.textContent = digaMe5
     temptMe5.textContent = "Temperature: " + Math.round(thatsHot5) + '\u00B0' +"F"
     windMe5.textContent = "Wind Speed: " + Math.round(blowMe5) + " M.P.H."
-    
+    merylStreep5.setAttribute("src", `https://openweathermap.org/img/w/${iconData}.png`)
+
     billWeathers5.appendChild(feelMe5)
     billWeathers5.appendChild(humidMe5)
     billWeathers5.appendChild(scribeMe5)
     billWeathers5.appendChild(temptMe5)
     billWeathers5.appendChild(windMe5)
+    billWeathers5.appendChild(merylStreep5)
 
 
     
