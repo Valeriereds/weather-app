@@ -292,42 +292,6 @@ function itsGonnaBe5(uFeelMe5, oDaHumidity5, thatsHot5, digaMe5, blowMe5, watDay
 
 
 
-
-
-
-// console.log(uFeelMe)
-// console.log(oDaHumidity)
-// console.log(thatsHot)
-// console.log(digaMe)
-// console.log(blowMe)
-// console.log(imBlind)
-
-// need to append child to add var list to html
-// might have to fetch it over and over again for different cities
-
-//     })
-// };
-
-
-
-
-// api link for each city
-// var link for long /lat
-// var city url
-// user inputs city it goes into cityurl
-// from cityurl well take the lat/long
-
-
-// fetch function for api
-// we need the city lat/long 
-
-
 // search button click event listener
 // function to save user search to local storage
 // function to render it to page
-
-
-// need a conditional function for day.js to render weather by date/time accurately on the page
-// need to have the api linked for long/lat of at least 5 cities/zipcodes
-// can we do this for all cities instead of just named cities?
-// request url variable
