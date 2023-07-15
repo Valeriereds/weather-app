@@ -64,7 +64,7 @@ function wheresCarmen(lats, getaLon) {
     return response.json();
   })
   .then(function (data) {
-    console.log(data)})}
+    console.log(data)
 
     var watDayIsIt = data.list[0].dt_txt
     var uFeelMe = data.list[0].main.feels_like;
