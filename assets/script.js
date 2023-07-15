@@ -9,7 +9,7 @@ var searchMe = document.getElementById("search-button");
 var hitList = document.getElementById("result-content");
 var aLovelyDay = document.getElementById("today")
 var userInMe = document.getElementById("user-input")
-
+var billWeathers = document.getElementById("todays-weather")
 // search button
 searchMe.addEventListener("click", wheresCarmen);
 searchMe.addEventListener("click", wheresWaldo);
@@ -58,69 +58,70 @@ function hisStory() {
 // function for lat/lon
 // added imperial units
 function wheresCarmen(lats, getaLon) {
-  var letsLinkCoors = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lats + "&lon=" + getaLon + "&appid=373d8c572f14892cf8f19bb961710ac8&units=imperial"
+  var letsLinkCoors = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lats + "&lon=" + getaLon + "&appid=373d8c572f14892cf8f19bb961710ac8"
   fetch(letsLinkCoors)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
-   
+    console.log(data)})}
+
     var watDayIsIt = data.list[0].dt_txt
     var uFeelMe = data.list[0].main.feels_like;
     var oDaHumidity = data.list[0].main.humidity;
-    var thatsHot = data.list[0].main.temp;
     var digaMe = data.list[0].weather[0].description;
+    var thatsHot = data.list[0].main.temp;
     var blowMe = data.list[0].wind.speed;
     var imBlind = data.list[0].visibility;
-    var watDayIsIt = data.list[0].dt_txt
+    
+    itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, imBlind, watDayIsIt)
 
 
-
+    var watDayIsIt1 = data.list[1].dt_txt
     var uFeelMe1 = data.list[1].main.feels_like;
     var oDaHumidity1 = data.list[1].main.humidity;
-    var thatsHot1 = data.list[1].main.temp;
     var digaMe1 = data.list[1].weather[0].description;
+    var thatsHot1 = data.list[1].main.temp;
     var blowMe1 = data.list[1].wind.speed;
     var imBlind1 = data.list[1].visibility;
-    var watDayIsIt1 = data.list[1].dt_txt
 
 
 
+    var watDayIsIt2 = data.list[2].dt_txt
     var uFeelMe2 = data.list[2].main.feels_like;
     var oDaHumidity2 = data.list[2].main.humidity;
-    var thatsHot2 = data.list[2].main.temp;
     var digaMe2 = data.list[2].weather[0].description;
+    var thatsHot2 = data.list[2].main.temp;
     var blowMe2 = data.list[2].wind.speed;
     var imBlind2 = data.list[2].visibility;
-    var watDayIsIt2 = data.list[2].dt_txt
 
 
 
+    var watDayIsIt3 = data.list[3].dt_txt
     var uFeelMe3 = data.list[3].main.feels_like;
     var oDaHumidity3 = data.list[3].main.humidity;
-    var thatsHot3 = data.list[3].main.temp;
     var digaMe3 = data.list[3].weather[0].description;
+    var thatsHot3 = data.list[3].main.temp;
     var blowMe3 = data.list[3].wind.speed;
     var imBlind3 = data.list[3].visibility;
-    var watDayIsIt3 = data.list[3].dt_txt
 
 
 
+    var watDayIsIt4 = data.list[4].dt_txt
     var uFeelMe4 = data.list[4].main.feels_like;
     var oDaHumidity4 = data.list[4].main.humidity;
-    var thatsHot4 = data.list[4].main.temp;
     var digaMe4 = data.list[4].weather[0].description;
+    var thatsHot4 = data.list[4].main.temp;
     var blowMe4 = data.list[4].wind.speed;
     var imBlind4 = data.list[4].visibility;
-    var watDayIsIt4 = data.list[4].dt_txt
 
 
 
+    var watDayIsIt5 = data.list[5].dt_txt
     var uFeelMe5 = data.list[5].main.feels_like;
     var oDaHumidity5 = data.list[5].main.humidity;
-    var thatsHot5 = data.list[5].main.temp;
     var digaMe5 = data.list[5].weather[0].description;
+    var thatsHot5 = data.list[5].main.temp;
     var blowMe5 = data.list[5].wind.speed;
     var imBlind5 = data.list[5].visibility;
     
@@ -130,7 +131,32 @@ function wheresCarmen(lats, getaLon) {
   
 }
 
-// 
+function itsGonnaBe(uFeelMe, oDaHumidity, thatsHot, digaMe, blowMe, imBlind, watDayIsIt) {
+  
+    var dateMe = document.querySelector("#today")
+    var feelMe = document.createElement("li")
+    var humidMe = document.createElement("li")
+    var scribeMe = document.createElement("li");
+    var temptMe = document.createElement("li")
+    var windMe = document.createElement("li");
+    var seeMe = document.createElement("li");
+    
+    aLovelyDay.textContent = watDayIsIt
+    feelMe.textContent = uFeelMe
+    humidMe.textContent = oDaHumidity
+    scribeMe.textContent = digaMe
+    temptMe.textContent = thatsHot
+    windMe.textContent = blowMe
+    seeMe.textContent = imBlind
+
+    billWeathers.appendChild(feelMe)
+    billWeathers.appendChild(humidMe)
+    billWeathers.appendChild(scribeMe)
+    billWeathers.appendChild(temptMe)
+    billWeathers.appendChild(windMe)
+    billWeathers.appendChild(seeMe)
+
+  }
 
 
 
@@ -172,4 +198,4 @@ function wheresCarmen(lats, getaLon) {
 // need a conditional function for day.js to render weather by date/time accurately on the page
 // need to have the api linked for long/lat of at least 5 cities/zipcodes
 // can we do this for all cities instead of just named cities?
-// request url variable 
+// request url variable
